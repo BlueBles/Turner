@@ -24,14 +24,13 @@ namespace Turner
                     string komenda = wylaczamy;
 
                     System.Diagnostics.Process cmd = new System.Diagnostics.Process();
-                    cmd.StartInfo.FileName = "cmd.exe";
-                    cmd.StartInfo.RedirectStandardInput = true;
-                    cmd.StartInfo.RedirectStandardOutput = true;
-                    cmd.StartInfo.CreateNoWindow = true;
+                    cmd.StartInfo.FileName = "cmd.exe"; //nazwa apki
+                    cmd.StartInfo.RedirectStandardInput = true; //przesylaj wejscie
+                    cmd.StartInfo.RedirectStandardOutput = true; //przesylaj wyjscie
+                    cmd.StartInfo.CreateNoWindow = true; //nie tworz okna
                     cmd.StartInfo.UseShellExecute = false;
-                    cmd.Start();
-
-                    cmd.StandardInput.WriteLine(komenda);
+                    cmd.Start(); //zacznij
+                    cmd.StandardInput.WriteLine(komenda); //komenda zostaje przeslana i aktywowana
                     cmd.StandardInput.Flush();
                     cmd.StandardInput.Close();
                     cmd.WaitForExit();

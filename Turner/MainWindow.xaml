@@ -9,18 +9,19 @@
         Background="AliceBlue"
         WindowStyle="SingleBorderWindow"
         WindowState="Normal"
-        
+        WindowStartupLocation="CenterScreen"
         >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="277*"/>
-            <RowDefinition Height="343*"/>
+            <RowDefinition Height="300*"/>
         </Grid.RowDefinitions>
 
         <Menu HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="843">
             <MenuItem Header="Wyłączanie Systemu" Height="32" Width="120"/>
             <MenuItem Header="Baza danych" Height="32" Width="113"/>
-            <MenuItem Header="MenuItem2" Height="32" Width="113"/>
+            <MenuItem Header="Sudoku" Height="32" Width="113"/>
+            <MenuItem Header="Info" Height="32" Width="113" HorizontalAlignment="Right"/>
         </Menu>
         <Button Content="Wyłącz" HorizontalAlignment="Left" Margin="384,271,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click" Grid.RowSpan="2" Height="20"/>
         <TextBox x:Name="textTime" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="1" Width="69" Height="20" 
