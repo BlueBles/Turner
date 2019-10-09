@@ -45,7 +45,7 @@ namespace Turner
             {
                 czas = Convert.ToInt32(textTime.Text);
                 Offuj offuj = new Offuj();
-                // offuj.turnoff(czas);
+                offuj.turnoff(czas);
             }
             ProgressOff.Maximum = czas;
             ProgressOff.Minimum = 0;
@@ -57,18 +57,13 @@ namespace Turner
             System.Timers.Timer timer = new System.Timers.Timer(1000); //1sekunda odświeżania 
             timer.Enabled = true; // włączenie minutnika
             timer.Start(); //start
-
+            
             
 
              
 
         }
 
-
-
-            
-
-        
 
         private void stopOff_Click(object sender, RoutedEventArgs e)
         {
