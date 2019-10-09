@@ -38,7 +38,21 @@ namespace Turner
             return komenda;
         }
             
-        
+        public void turnOffStop()
+        {
+            System.Diagnostics.Process cmd = new System.Diagnostics.Process();
+            cmd.StartInfo.FileName = "cmd.exe"; 
+            cmd.StartInfo.RedirectStandardInput = true; 
+            cmd.StartInfo.RedirectStandardOutput = true; 
+            cmd.StartInfo.CreateNoWindow = true; 
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start(); //zacznij
+            cmd.StandardInput.WriteLine("shutdown -a"); 
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+        }
 
     }
 }

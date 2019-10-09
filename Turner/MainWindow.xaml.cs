@@ -22,34 +22,60 @@ namespace Turner
     /// </summary>
     public partial class MainWindow : Window
     {
-        int czas = 60;
+       static int czas;
         public MainWindow()
         {
             InitializeComponent();
             {
-                
+              
 
             }
           
         }
-       
-       
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e) //przycisk OFF
         {
-            if(textTime.Text == "")
+            if (textTime.Text == "")
             {
                 MessageBox.Show("Wpisz wartość w minutach");
             }
             else
             {
-            czas = Convert.ToInt32(textTime.Text);
-            Offuj offuj = new Offuj();
-            offuj.turnoff(czas);
+                czas = Convert.ToInt32(textTime.Text);
+                Offuj offuj = new Offuj();
+                // offuj.turnoff(czas);
             }
+            ProgressOff.Maximum = czas;
+            ProgressOff.Minimum = 0;
+            ProgressOff.IsEnabled = true;
             
+            
+           
+
+            System.Timers.Timer timer = new System.Timers.Timer(1000); //1sekunda odświeżania 
+            timer.Enabled = true; // włączenie minutnika
+            timer.Start(); //start
+
+            
+
+             
+
         }
 
+
+
+            
+
         
+
+        private void stopOff_Click(object sender, RoutedEventArgs e)
+        {
+            Offuj offuj = new Offuj();
+            offuj.turnOffStop();
+        }
     }
+
+   
 }
