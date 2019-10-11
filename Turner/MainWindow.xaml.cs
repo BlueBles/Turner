@@ -50,25 +50,22 @@ namespace Turner
             ProgressOff.Maximum = czas;
             ProgressOff.Minimum = 0;
             ProgressOff.IsEnabled = true;
-            
-            
-           
-
-            System.Timers.Timer timer = new System.Timers.Timer(1000); //1sekunda odświeżania 
-            timer.Enabled = true; // włączenie minutnika
-            timer.Start(); //start
-            
-            
-
-             
+          
 
         }
 
+        
 
         private void stopOff_Click(object sender, RoutedEventArgs e)
         {
             Offuj offuj = new Offuj();
             offuj.turnOffStop();
+        }
+
+        private void MenuSudoku_Click(object sender, RoutedEventArgs e) //przycisk sudoku w menu
+        {
+            resultOptionGrid.Visibility = Visibility.Hidden;
+
         }
     }
 

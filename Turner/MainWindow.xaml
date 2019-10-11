@@ -5,31 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Turner"
         mc:Ignorable="d"
-        Title="Turner" Height="650" Width="850"
+        Title="Turner" Height="600" Width="800"
         Background="AliceBlue"
         WindowStyle="SingleBorderWindow"
         WindowState="Normal"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" 
         >
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="277*"/>
-            <RowDefinition Height="300*"/>
-        </Grid.RowDefinitions>
 
-        <Menu HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="843">
-            <MenuItem Header="Wyłączanie Systemu" Height="32" Width="120"/>
-            <MenuItem Header="Baza danych" Height="32" Width="113"/>
-            <MenuItem Header="Sudoku" Height="32" Width="113"/>
-            <MenuItem Header="Info" Height="32" Width="113" HorizontalAlignment="Right"/>
+
+
+    <Grid Name="WylaczGrid" >
+
+        <Menu HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="800" >
+            <MenuItem Header=" Wyłączanie Systemu" Height="32" Width="200" IsEnabled="True"  />
+            <MenuItem Header="Baza danych" Height="32" Width="200" IsEnabled="True"/>
+            <MenuItem Header="Sudoku" x:Name="sudokuMenuItem" Height="32" Width="100" Click="MenuSudoku_Click" IsEnabled="True"/>
+            <MenuItem Header="Galeria zdjęć" x:Name="galeryMenuItem" Height="32" Width="100" IsEnabled="True"/>
+            <MenuItem Header="Formularz" x:Name="formMenuItem" Height="32" Width="100" IsEnabled="True"/>
+            <MenuItem Header="Info" Height="32" Width="75" HorizontalAlignment="Right" IsEnabled="True"/>
         </Menu>
-        <Button Content="Wyłącz" HorizontalAlignment="Left" Margin="384,271,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click" Grid.RowSpan="2" Height="20"/>
-        <TextBox x:Name="textTime" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="1" Width="85" Height="20" 
+
+
+        <Grid x:Name="turnOptionsGrid" HorizontalAlignment="Left" Height="515" Margin="10,40,0,0" VerticalAlignment="Top" Width="180" Background="Azure">
+            <Button Content="Wyłącz"  Click="Button_Click" Width="50" Margin="65,30,65,465" />
+            <Button Content="Zapisz"  Click="Button_Click" Width="50" Margin="65,60,65,435" />
+            <Button Content="Ustaw"  Click="Button_Click" Width="50" Margin="65,90,65,405"/>
+            <Button Content="Reset"  Click="Button_Click" Width="50" Margin="65,120,65,375"/>
+            <Button Content="Info"  Click="Button_Click" Width="50" Margin="65,150,65,345"/>
+
+        </Grid>
+
+
+        <Grid x:Name="resultOptionGrid" HorizontalAlignment="Stretch" Height="515" Margin="195,40,0,0" VerticalAlignment="Top" Width="580"
+              Visibility="Visible" 
+              >
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="50" Margin="10,0" Background="Bisque">
+                <TextBox x:Name="textTime" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="75" Height="20" 
                    TextAlignment="Center"
                    Foreground="DarkBlue"
-                   Margin="384,238,374.2,39.6" AutomationProperties.HelpText="Wpisz czas (minuty)" FontSize="14"/>
-        <ProgressBar Name="ProgressOff" HorizontalAlignment="Center" Height="19" Margin="257,10,246,0" Grid.Row="1" VerticalAlignment="Top" Width="340" Background="#FFEAA1A1" Foreground="#FF0BE232"/>
-        <Button Name="stopOff" Content="Zatrzymaj" HorizontalAlignment="Left" Margin="384,41.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="79" Click="stopOff_Click"/>
+                   Margin="240.2,100.2,243.2,393.4" AutomationProperties.HelpText="Wpisz czas (minuty)" FontSize="14"
+                     />
+            </Border>
+            <Label Content="Podaj czas w minutach" IsEnabled="True" Margin="220,70,220,405"/>
+            <ProgressBar x:Name="ProgressOff" HorizontalAlignment="Center" Height="19" Margin="116,10,124,0" 
+                         VerticalAlignment="Top" Width="340" Background="#FFEAA1A1" 
+                         Foreground="#FF0BE232"
+                         />
+            <Button x:Name="stopOff" Content="Zatrzymaj" HorizontalAlignment="Left" 
+                    Margin="259,343,0,0" VerticalAlignment="Top" Width="79" Click="stopOff_Click"
+                    />
+        </Grid>
+
 
     </Grid>
+
 </Window>

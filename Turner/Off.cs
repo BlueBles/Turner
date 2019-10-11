@@ -46,7 +46,7 @@ namespace Turner
             cmd.StartInfo.RedirectStandardOutput = true; 
             cmd.StartInfo.CreateNoWindow = true; 
             cmd.StartInfo.UseShellExecute = false;
-            cmd.Start(); //zacznij
+            cmd.Start(); 
             cmd.StandardInput.WriteLine("shutdown -a"); 
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
