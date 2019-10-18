@@ -51,20 +51,32 @@ namespace Turner
             ProgressOff.Minimum = 0;
             ProgressOff.IsEnabled = true;
           
-
+            Duration duration = new Duration(TimeSpan.FromMinutes(czas));
+            System.Windows.Media.Animation.DoubleAnimation doubleanimation = new System.Windows.Media.Animation.DoubleAnimation(czas, duration);
+            ProgressOff.BeginAnimation(ProgressBar.ValueProperty , doubleanimation); //pasek statusu postępu, działa należycie
+            
         }
 
         
 
-        private void stopOff_Click(object sender, RoutedEventArgs e)
+        private void stopOff_Click(object sender, RoutedEventArgs e) //zatrzymanie wylaczenia systemu
         {
             Offuj offuj = new Offuj();
             offuj.turnOffStop();
+
+            
+            
         }
 
         private void MenuSudoku_Click(object sender, RoutedEventArgs e) //przycisk sudoku w menu
         {
             resultOptionGrid.Visibility = Visibility.Hidden;
+
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Szymon i Dawid");
 
         }
     }

@@ -23,23 +23,23 @@
             <MenuItem Header="Sudoku" x:Name="sudokuMenuItem" Height="32" Width="100" Click="MenuSudoku_Click" IsEnabled="True"/>
             <MenuItem Header="Galeria zdjęć" x:Name="galeryMenuItem" Height="32" Width="100" IsEnabled="True"/>
             <MenuItem Header="Formularz" x:Name="formMenuItem" Height="32" Width="100" IsEnabled="True"/>
-            <MenuItem Header="Info" Height="32" Width="75" HorizontalAlignment="Right" IsEnabled="True"/>
+            <MenuItem Header="Info" Height="32" Width="75" HorizontalAlignment="Right" IsEnabled="True" Click="MenuItem_Click"/>
         </Menu>
 
 
-        <Grid x:Name="turnOptionsGrid" HorizontalAlignment="Left" Height="515" Margin="10,40,0,0" VerticalAlignment="Top" Width="180" Background="Azure">
+        <Grid x:Name="turnOptionsGrid"  HorizontalAlignment="Left" Height="515" Margin="10,40,0,0" VerticalAlignment="Top" Width="180" Background="Azure">
             <Button Content="Wyłącz"  Click="Button_Click" Width="50" Margin="65,30,65,465" />
             <Button Content="Zapisz"  Click="Button_Click" Width="50" Margin="65,60,65,435" />
             <Button Content="Ustaw"  Click="Button_Click" Width="50" Margin="65,90,65,405"/>
-            <Button Content="Reset"  Click="Button_Click" Width="50" Margin="65,120,65,375"/>
-            <Button Content="Info"  Click="Button_Click" Width="50" Margin="65,150,65,345"/>
+            <Button Content="Reset"  Click="Button_Click" Width="50" Margin="65,120,65,375"/> <!--reset-->
+            <Button Content="Info"  Click="Button_Click" Width="50" Margin="65,150,65,345"/> <!--przycisk info-->
 
         </Grid>
 
 
         <Grid x:Name="resultOptionGrid" HorizontalAlignment="Stretch" Height="515" Margin="195,40,0,0" VerticalAlignment="Top" Width="580"
               Visibility="Visible" 
-              >
+              > <!-- grid ekranu -->
             <Border BorderThickness="1" BorderBrush="Black" CornerRadius="50" Margin="10,0" Background="Bisque">
                 <TextBox x:Name="textTime" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="75" Height="20" 
                    TextAlignment="Center"
@@ -56,8 +56,6 @@
                     Margin="259,343,0,0" VerticalAlignment="Top" Width="79" Click="stopOff_Click"
                     />
         </Grid>
-
-
     </Grid>
 
 </Window>
