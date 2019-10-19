@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
 
 
 
@@ -27,10 +28,10 @@ namespace Turner
         {
             InitializeComponent();
             {
-              
+                
 
             }
-          
+
         }
 
 
@@ -74,7 +75,7 @@ namespace Turner
 
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click(object sender, RoutedEventArgs e) //creditsy
         {
             MessageBox.Show("Szymon i Dawid");
 
